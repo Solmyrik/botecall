@@ -1,0 +1,87 @@
+.know {
+  @media (max-width: $md4) {
+    margin-bottom: 0;
+  }
+  &__container {
+    position: relative;
+  }
+  &__snowflake {
+    position: absolute;
+    left: -200px;
+    top: -200px;
+    img {
+      height: 400px;
+      width: 400px;
+    }
+    @media (max-width: $md2) {
+      display: none;
+    }
+  }
+
+  &__body {
+    background-color: $blue;
+    color: $white;
+    border-radius: 8px;
+    padding: 112px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: $md2) {
+      padding: 100px 0px;
+    }
+    @media (max-width: $md4) {
+      padding: 90px 15px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 35px;
+  }
+
+  &__subtitle {
+    margin-bottom: 60px;
+  }
+
+  &__links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    @media (max-width: $md2) {
+      flex-direction: column;
+    }
+  }
+
+  &__link {
+    padding: 0px 20px;
+    height: 95px;
+    background: #f2f6fa;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    @media (max-width: $md2) {
+      width: 100%;
+    }
+    &:hover {
+      opacity: 0.9;
+    }
+    @media (max-width: $md4) {
+      width: 100%;
+    }
+  }
+
+  &__icon {
+    margin-right: 5px;
+  }
+
+  &__text {
+    text-decoration-line: underline;
+    font-size: 18px;
+    color: $black;
+    cursor: pointer;
+  }
+}

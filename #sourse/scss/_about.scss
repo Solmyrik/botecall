@@ -1,0 +1,145 @@
+.about {
+  &__container {
+  }
+
+  &__body {
+    display: flex;
+    //  gap: 160px;
+    margin-bottom: 100px;
+    justify-content: space-between;
+    @media (max-width: $md2) {
+      display: block;
+      margin-bottom: 75px;
+    }
+    @media (max-width: $md4) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__left {
+    flex: 0 1 45%;
+    @media (max-width: $md2) {
+      margin-bottom: 65px;
+    }
+    @media (max-width: $md4) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__signature {
+    width: 250px;
+    height: 90px;
+    img {
+      width: 250px;
+      height: 90px;
+    }
+    @media (max-width: 1390px) {
+      display: none;
+    }
+  }
+
+  &__img {
+    padding-bottom: 109%;
+    width: 100%;
+    @media (max-width: $md2) {
+      padding-bottom: 70%;
+    }
+    @media (max-width: $md4) {
+      padding-bottom: 90%;
+    }
+
+    img {
+      width: 610px;
+      height: 681px;
+    }
+  }
+
+  &__right {
+    flex: 0 1 45%;
+    position: relative;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    margin-bottom: 60px;
+    @media (max-width: $md2) {
+      font-size: 30px;
+    }
+    @media (max-width: $md4) {
+      font-size: 20px;
+      margin-bottom: 35px;
+    }
+  }
+
+  &__content {
+    font-size: 20px;
+    line-height: 150%;
+    p {
+      margin-bottom: 10px;
+    }
+    span {
+      font-weight: 600;
+    }
+    margin-bottom: 37px;
+    @media (max-width: 1200px) {
+      margin-bottom: 120px;
+    }
+    @media (max-width: $md2) {
+      font-size: 16px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__person {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    font-weight: 600;
+    font-size: 20px;
+    &::before {
+      content: '';
+      background-color: #4f52ff;
+      position: absolute;
+      height: 3px;
+      width: 140px;
+      top: -30px;
+    }
+    @media (max-width: $md2) {
+      position: relative;
+      bottom: 0;
+      margin-bottom: 10px;
+      &::before {
+        top: -20px;
+      }
+    }
+    @media (max-width: $md2) {
+      font-size: 14px;
+    }
+  }
+
+  &__subperson {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 18px;
+    @media (max-width: $md2) {
+      position: static;
+    }
+    @media (max-width: $md2) {
+      font-size: 14px;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__btn {
+    @media (max-width: $md4) {
+      font-size: 16px;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.policy {
+  &__container {
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: center;
+    padding: 70px 0px;
+  }
+
+  &__btn {
+    padding: 0 20px;
+    width: auto;
+    img {
+      margin-right: 5px;
+    }
+    background-color: #4f52ff;
+  }
+
+  &__title {
+    margin-bottom: 100px;
+  }
+
+  &__body {
+  }
+
+  &__item {
+    margin-bottom: 30px;
+  }
+
+  &__name {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 150%;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 150%;
+  }
+}
