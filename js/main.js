@@ -2,7 +2,6 @@ const iconMenu = document.querySelector('.header__burger');
 if (iconMenu) {
   const menuBody = document.querySelector('.menu__body');
   iconMenu.addEventListener('click', function (e) {
-    document.body.classList.toggle('_lock');
     iconMenu.classList.toggle('_active');
     menuBody.classList.toggle('_active');
   });
@@ -22,35 +21,30 @@ const audioElement1 = new Audio('audio/Первый экран.mp3');
 const audioElement2 = new Audio('audio/Провайдер.mp3');
 const audioElement3 = new Audio('audio/Стоматология.mp3');
 const audioElement4 = new Audio('audio/Косметология.mp3');
+const audioElement5 = new Audio('audio/Строительная компания.mp3');
 
-const audios = [audioElement1, audioElement2, audioElement3, audioElement4];
+const audios = [audioElement1, audioElement2, audioElement3, audioElement4, audioElement5];
 
 const inpi = document.querySelectorAll('.input-musik');
 
-// audioElement1.addEventListener('timeupdate', (e) => {
-//   inpi[0].value = audioElement1.currentTime;
-// });
-
-// inpi[0].onchange = (e) => {
-//   audioElement1.currentTime = e.target.value;
-//   console.log(e.target.value);
-//   audioElement1.play();
-// };
-// audioElement1.addEventListener('timeupdate', (e) => {
-//   inpi[1].value = audioElement1.currentTime;
-// });
-
-// inpi[1].onchange = (e) => {
-//   audioElement1.currentTime = e.target.value;
-//   console.log(e.target.value);
-//   audioElement1.play();
-// };
-
 const playerBtn = document.querySelectorAll('.player__btns');
+
+function onOff() {
+  for (let i = 0; i < playerBtn.length; i++) {
+    playerBtn[i].children[1].classList.remove('active');
+    if (!playerBtn[i].children[0].classList.contains('active')) {
+      playerBtn[i].children[0].classList.add('active');
+    }
+  }
+}
 
 function musikPlay(playerBtn, audio) {
   playerBtn.onclick = (e) => {
     if (e.target.src.includes('play')) {
+      audios.forEach((e) => {
+        e.pause();
+      });
+      onOff();
       audio.play();
       e.target.parentNode.parentNode.children[0].classList.remove('active');
       e.target.parentNode.parentNode.children[1].classList.add('active');
@@ -167,6 +161,10 @@ const popupError = document.querySelector('.popup-local__error');
 const popupForm = document.querySelector('.popup-local__form');
 const popupThanks = document.querySelector('.popup-local__thanks');
 
+const botName = document.querySelector('.bot__name');
+const botNumber = document.querySelector('.bot__number');
+const botsend = document.querySelector('.bot_send');
+
 if (popupBtn) {
   popupBtn.addEventListener('click', () => {
     let error = 0;
@@ -181,9 +179,13 @@ if (popupBtn) {
     } else {
       popupForm.style.display = 'none';
       popupThanks.style.display = 'block';
+      botName.value = popupName.value;
+      botNumber.value = popupNumber.value;
+      botsend.click();
     }
   });
 }
+
 const wantBtn = document.querySelector('.want__btn');
 const wantName = document.querySelector('.want__name');
 const wantNumber = document.querySelector('.want__number');

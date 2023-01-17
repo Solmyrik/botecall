@@ -38,15 +38,10 @@
     align-items: center;
     font-size: 18px;
     position: relative;
-    &:first-child {
-      margin-right: 26px;
-      &::before {
-        content: '';
-        background-color: rgba(0, 0, 0, 0.3);
-        height: 20px;
-        width: 1px;
-        position: absolute;
-        right: -13px;
+    gap: 10px;
+    &:hover {
+      .header__phone {
+        color: $blue-primary;
       }
     }
   }
@@ -58,11 +53,9 @@
 
   &__phone {
     font-weight: 600;
+    font-size: 16px;
     color: $blue;
     transition: color 0.3s;
-    &:hover {
-      color: $purple;
-    }
   }
 }
 .menu {
@@ -116,6 +109,8 @@
   }
   &__sublink {
     color: $white;
+    display: flex;
+    align-items: center;
     span {
       margin-left: 5px;
     }
